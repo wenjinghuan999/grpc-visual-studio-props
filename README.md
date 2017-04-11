@@ -59,13 +59,14 @@ git config --global http.proxy 127.0.0.1:1080
 
 Setting up projects
 --
-Try to use predefined `.props` files and `packages.config` file~
+Try to use predefined `.props` files and `packages.config` file~  
 **It seems you have to manually add NuGet packages by right click project - `Manage NuGet packages`. Simply adding `packages.config` to project does not seem to work.** (because package dependencies are defined in `.vcxproj` file)
 
 In summary:
 - Add `grpc_debug.props` and `grpc_release.props` via `Property Manager`
 - Change the macro `$(GRPC_HOME)` in those `.props` if needed
 - Add `grpc.dependencies.*` packages in NuGet package manager (Actually adding `grpc.dependencies.openssl` is enough, the others are dependencies of openssl)
+- Edit `Build events` - `Pre-build events` - `Command` if needed. The default command executes protoc for each .proto file under project directory
 - Build and enjoy~
 
 Or manually
