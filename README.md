@@ -21,6 +21,7 @@ Run grpc_clone.bat
 Run grpc_build.bat
 
 Note: setting up proxy before running grpc_clone.bat *(Chinese users: This might be the solution you are finding)*
+For example, if you run a local proxy server at port 1080
 ```bat
 git config --global http.proxy 127.0.0.1:1080
 ```
